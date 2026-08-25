@@ -77,4 +77,3 @@ Explored three complementary Azure monitoring tools to close the loop on managem
 This project took about **2 days** end-to-end. The most challenging parts were largely around Azure's guardrails — regional capacity limits, runtime version mismatches, and pricing-tier restrictions — rather than the app code itself, which was the point: the goal was to build fluency with Azure's CLI, governance, and monitoring surface, not to build a complex app.
 
 **Next up:** deploying and managing Azure VMs, and exploring more of Azure's resource landscape beyond PaaS.
-Fix Image Paths
