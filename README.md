@@ -8,7 +8,7 @@
 
 End-to-end deployment of a web app on **Azure App Service**, done entirely through **Azure Cloud Shell** (Bash + Azure CLI) — no local environment or portal clicking involved. The goal was to go beyond a basic "hello world" deploy and cover the full lifecycle a real workload needs: provisioning, zero-downtime deployment, governance controls, and monitoring.
 
-![Resource group creation via Azure CLI](screenshots/01-resource-group.png)
+![Resource group creation via Azure CLI](/01-resource-group.png)
 
 ## What I Built
 
@@ -19,7 +19,7 @@ End-to-end deployment of a web app on **Azure App Service**, done entirely throu
 - Set up monitoring using **Azure Advisor**, **Service Health**, and **Azure Monitor** metrics
 - Got hands-on with the **PaaS** model — Azure handled the server, runtime, and scaling so I could focus purely on application code
 
-![Live web app running on Azure App Service](screenshots/02-live-app.png)
+![Live web app running on Azure App Service](/02-live-app.png)
 
 ## Tools & Concepts Used
 
@@ -32,7 +32,7 @@ End-to-end deployment of a web app on **Azure App Service**, done entirely throu
 
 To protect the resource group from accidental deletion, I applied a `CanNotDelete` lock via `az group lock create`. When I then attempted `az group delete`, Azure correctly blocked the operation:
 
-![Resource lock blocking a delete operation](screenshots/04-resource-lock-error.png)
+![Resource lock blocking a delete operation](/04-resource-lock-error.png)
 
 ```
 (ScopeLocked) The scope '.../resourceGroups/az900-webapp-rg' cannot perform
@@ -44,7 +44,7 @@ lock and try again.
 
 I learned how deployment slots let you stage a new version of an app in an isolated environment (Standard S1 tier) and swap it into production instantly, with no downtime for users — the same blue-green pattern used in production systems.
 
-![Verifying the deployed content after slot swap](screenshots/05-slot-swap.png)
+![Verifying the deployed content after slot swap](/05-slot-swap.png)
 
 **Key takeaways from this section:**
 - **PaaS in practice:** deploying directly to App Service showed how Azure abstracts away server setup, scaling, and runtime configuration
@@ -58,7 +58,7 @@ Explored three complementary Azure monitoring tools to close the loop on managem
 - **Azure Service Health** — surfaces platform-level outages that Microsoft, not the customer, is responsible for fixing
 - **Azure Monitor Metrics** — configured live metrics (e.g. Average Memory Working Set, HTTP 2xx) for the running `kchudasama13` web app
 
-![Azure Monitor metrics for the web app](screenshots/03-monitoring.png)
+![Azure Monitor metrics for the web app](/03-monitoring.png)
 
 ## Issues Hit & How I Resolved Them
 
@@ -77,3 +77,4 @@ Explored three complementary Azure monitoring tools to close the loop on managem
 This project took about **2 days** end-to-end. The most challenging parts were largely around Azure's guardrails — regional capacity limits, runtime version mismatches, and pricing-tier restrictions — rather than the app code itself, which was the point: the goal was to build fluency with Azure's CLI, governance, and monitoring surface, not to build a complex app.
 
 **Next up:** deploying and managing Azure VMs, and exploring more of Azure's resource landscape beyond PaaS.
+Fix Image Paths
